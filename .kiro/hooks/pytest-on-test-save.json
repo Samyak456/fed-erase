@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "pytest on test file save",
+      "trigger": "PostFileSave",
+      "description": "Run pytest on the specific test file that was just saved. Keeps the feedback loop tight without running the whole suite.",
+      "matcher": "tests/.*\\.py$",
+      "action": {
+        "type": "command",
+        "command": "pytest \"$KIRO_FILE_PATH\" -v --tb=short 2>&1 | tail -30"
+      }
+    }
+  ]
+}

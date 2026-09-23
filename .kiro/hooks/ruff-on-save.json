@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Ruff lint on Python save",
+      "trigger": "PostFileSave",
+      "description": "Run ruff linter on any Python file immediately after it is saved. Output is shown in the terminal so errors are surfaced without blocking.",
+      "matcher": "\\.py$",
+      "action": {
+        "type": "command",
+        "command": "ruff check \"$KIRO_FILE_PATH\" 2>&1 | head -40"
+      }
+    }
+  ]
+}

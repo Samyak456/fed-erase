@@ -1,0 +1,41 @@
+# FedErase — Default Configuration
+# This file provides default values for all configurable parameters.
+# Phase-specific experiments override these values as needed.
+
+experiment_name: phase1_baseline
+seed: 42
+
+dataset:
+  name: cifar10
+  data_dir: data/cifar10
+  val_fraction: 0.1
+  batch_size: 64
+  num_workers: 2
+  augment_train: true
+
+model:
+  name: cifar_cnn
+  num_classes: 10
+  conv_channels: [32, 64, 128]
+  dropout: 0.3
+  activation: relu
+
+training:
+  epochs: 20
+  optimizer: sgd
+  learning_rate: 0.01
+  momentum: 0.9
+  weight_decay: 0.0001
+  scheduler: cosine
+  early_stopping_patience: 7
+  device: auto
+
+checkpoint:
+  checkpoint_dir: checkpoints/phase1
+  save_best_only: true
+  keep_last_n: 3
+
+logging:
+  level: INFO
+  log_dir: logs
+  log_file: phase1.log

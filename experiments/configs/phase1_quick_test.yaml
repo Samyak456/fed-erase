@@ -1,0 +1,37 @@
+experiment_name: phase1_quick_test
+seed: 42
+
+dataset:
+  name: cifar10
+  data_dir: data/cifar10
+  val_fraction: 0.1
+  batch_size: 64
+  num_workers: 0
+  augment_train: true
+
+model:
+  name: cifar_cnn
+  num_classes: 10
+  conv_channels: [32, 64]
+  dropout: 0.3
+  activation: relu
+
+training:
+  epochs: 2
+  optimizer: sgd
+  learning_rate: 0.01
+  momentum: 0.9
+  weight_decay: 0.0001
+  scheduler: null
+  early_stopping_patience: null
+  device: auto
+
+checkpoint:
+  checkpoint_dir: checkpoints/phase1
+  save_best_only: true
+  keep_last_n: 3
+
+logging:
+  level: INFO
+  log_dir: logs
+  log_file: phase1_quick_test.log
