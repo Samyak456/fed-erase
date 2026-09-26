@@ -1,0 +1,10 @@
+{
+  "description": "Efficiently manage federated learning models with a user-friendly dashboard that enables adaptive unlearning, client influence tracking, and performance verification.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
